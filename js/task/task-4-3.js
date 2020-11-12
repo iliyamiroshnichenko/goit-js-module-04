@@ -1,40 +1,34 @@
-const findBestEmployee = function (employees) {
-  'use strict';
-  let max = 0;
-  let bestEmpoyee = '';
-  const keys = Object.keys(employees);
-  for (const key of keys) {
-    if (employees[key] > max) {
-      max = employees[key];
-      bestEmpoyee = key;
-    }
+const add = (accum, element) => accum + element;
+const mult = (accum, element) => accum * element;
+const sub = (accum, element) => accum - element;
+
+function reduceArray(array, cb, initial) {
+  "use strict";
+  let i;
+  let accum;
+  if (arguments.length >= 3) {
+    accum = initial;
+    i = 0;
   }
-  return bestEmpoyee;
-};
-
-// Объекты и ожидаемый результат
-const developers = {
-  ann: 29,
-  david: 35,
-  helen: 1,
-  lorence: 99,
-};
-console.log(findBestEmployee(developers));
-// 'lorence'
-
-const supports = {
-  poly: 12,
-  mango: 17,
-  ajax: 4,
-};
-console.log(findBestEmployee(supports));
-// 'mango'
-
-const sellers = {
-  lux: 147,
-  david: 21,
-  kiwi: 19,
-  chelsy: 38,
+  if (arguments.length === 2) {
+    accum = array[0];
+    i = 1;
+  }
+  for (i; i < array.length; i += 1) {
+    const element = array[i];
+    // Write code under this line
+    accum = cb(accum, element);
+  }
+  return accum;
 }
-console.log(findBestEmployee(sellers));
-// 'lux'
+
+const arr = [1, 2, 3, 4, 5];
+
+console.log(reduceArray(arr, add)); // 15
+console.log(reduceArray(arr, add, 10)); // 25
+
+console.log(reduceArray(arr, mult)); // 120
+console.log(reduceArray(arr, mult, 10)); // 1200
+
+console.log(reduceArray(arr, sub)); // -13
+console.log(reduceArray(arr, sub, 10)); // -5

@@ -21,21 +21,21 @@ const handleButtonClick = function () {
 buttonRef.addEventListener("click", handleButtonClick);
 
 // Отложенный вызов - интервалы
-// console.log("В коде перед таймаутом");
+console.log("В коде перед таймаутом");
 
-// setTimeout(function () {
-//   console.log("Через 3 секунды внутри колбека в таймауте");
-// }, 3000);
+setTimeout(function () {
+  console.log("Через 3 секунды внутри колбека в таймауте");
+}, 3000);
 
-// console.log("В коде после таймаута");
+console.log("В коде после таймаута");
 
 // Отложенный вызов - http-запрос
-const handleFetchSuccess = (data) => console.log(data);
+// const handleFetchSuccess = (data) => console.log(data);
 
-console.log("Перед фетч");
+// console.log("Перед фетч");
 
-fetch("https://swapi.dev/api/people/2/")
-  .then((res) => res.json())
-  .then(handleFetchSuccess);
+// fetch("https://swapi.dev/api/people/2/")
+//   .then((res) => res.json())
+//   .then(handleFetchSuccess);
 
-console.log("После фетч");
+// console.log("После фетч");

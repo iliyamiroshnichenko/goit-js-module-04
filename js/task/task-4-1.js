@@ -13,9 +13,10 @@ function mapArray(array, cb) {
 }
 
 const arr = [1, 2, 3, 4, 5];
+const arr2 = [10, 8, 6, 4, 2];
 
-console.log(mapArray(arr, addIndex));
+console.log(mapArray(arr2, addIndex));
 // [1, 3, 5, 7, 9]
 
-console.log(mapArray(arr, subIndex));
+console.log(mapArray(arr2, subIndex));
 // [1, 1, 1, 1, 1]
